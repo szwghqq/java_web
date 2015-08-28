@@ -1,0 +1,61 @@
+DROP TABLE IF EXISTS bug;
+CREATE TABLE `web`.`bug`(  
+  `id` VARCHAR(32),
+  `createdatetime` DATETIME,
+  `name` VARCHAR(32),
+  `note` VARCHAR(256)
+);
+DROP TABLE IF EXISTS menu;
+CREATE TABLE `web`.`menu`(  
+  `id` VARCHAR(32),
+  `createdatetime` DATETIME,
+  `iconcls` VARCHAR(32),
+  seq LONG,
+  `text` VARCHAR(256),
+  url VARCHAR(64),
+  pid VARCHAR(32)
+  
+);
+
+DROP TABLE IF EXISTS online;
+CREATE TABLE `web`.`online`(  
+  `id` VARCHAR(32),
+  `logindatetime` DATETIME,
+  `ip` VARCHAR(32),
+  `loginname` VARCHAR(32)
+);
+DROP TABLE IF EXISTS Resource;
+CREATE TABLE `web`.`Resource`(  
+  `id` VARCHAR(32),
+   seq LONG,
+  `ip` VARCHAR(32),
+    url VARCHAR(64),
+    pid VARCHAR(32)
+);
+DROP TABLE IF EXISTS Role;
+CREATE TABLE `web`.`Role`(  
+  `id` VARCHAR(32),
+TEXT VARCHAR(256)
+);
+DROP TABLE IF EXISTS RoleResource;
+CREATE TABLE `web`.`RoleResource`(  
+  `id` VARCHAR(32),
+resourceId VARCHAR(256),
+roleId VARCHAR(256)
+);
+DROP TABLE IF EXISTS TUSER;
+CREATE TABLE `web`.`TUser`(  
+  `id` VARCHAR(32),
+    `createdatetime` DATETIME,
+        `modifydatetime` DATETIME,
+          `name` VARCHAR(32),
+              `pwd` VARCHAR(32),
+    `create_Time` DATE,
+        `update_Time` DATE
+);
+DROP TABLE IF EXISTS UserRole;
+CREATE TABLE `web`.`UserRole`(  
+  `id` VARCHAR(32),
+    `roleId` VARCHAR(32),
+        `userId` VARCHAR(32)
+);
